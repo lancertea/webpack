@@ -7,6 +7,10 @@ import { sum } from './math'
 const sumRes = sum(10, 20)
 console.log('sumRes', sumRes)
 
+// //引入第三方模块
+// import _ from 'lodash'
+// console.log(_.each);
+
 //IgnorePligin(避免引入无用模块)
 
 import moment from 'moment' //235.4k    58k
@@ -16,14 +20,7 @@ console.log('locale',moment.locale())
 console.log('date',moment().format('ll'))  //获取日期
 
 
-
-
-//引入第三方模块
-import _ from 'lodash'
-console.log(_.each);
-
-
-// // 增加，开启热更新之后的代码逻辑
+// 开启热更新之后的代码逻辑
 // if (module.hot) {
     //'./math'  监听范围
 //     module.hot.accept(['./math'], () => {
@@ -32,7 +29,8 @@ console.log(_.each);
 //     })
 // }
 
-//加入图片
+
+//引入图片
 function insertImgElem(imgFile){
     const img =new Image()
     img.src=imgFile
@@ -45,9 +43,9 @@ insertImgElem(imgFile2)
 
 
 //引入动态数据 懒加载
-setTimeout(()=>{
-    import('./dynamic-data.js').then(res=>{
-        console.log(res.default.message)
+// setTimeout(()=>{
+//     import('./dynamic-data.js').then(res=>{
+//         console.log(res.default.message)  //注意这里的default
         
-    })
-},1500)
+//     })
+// },1500)
