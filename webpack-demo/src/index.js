@@ -20,13 +20,13 @@ console.log('date',moment().format('ll'))  //获取日期
 
 
 // 开启热更新之后的代码逻辑
-// if (module.hot) {
+if (module.hot) {
     //'./math'  监听范围
-//     module.hot.accept(['./math'], () => {
-//         const sumRes = sum(10, 30)
-//         console.log('sumRes in hot', sumRes)
-//     })
-// }
+    module.hot.accept(['./math'], () => {
+        const sumRes = sum(10, 30)
+        console.log('sumRes in hot', sumRes)
+    })
+}
 
 
 //引入图片

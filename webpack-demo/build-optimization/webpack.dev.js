@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const webpackCommonConf = require('./webpack.common.js')
 const { smart } = require('webpack-merge')
 const { srcPath, distPath } = require('./paths')
+//热更新
 const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlugin');
 
 module.exports = smart(webpackCommonConf, {
@@ -19,6 +20,7 @@ module.exports = smart(webpackCommonConf, {
     },
     module: {
         rules: [
+
             {
                 test: /\.js$/,
                 loader: ['babel-loader?cacheDirectory'],
@@ -77,14 +79,22 @@ module.exports = smart(webpackCommonConf, {
             }
         }
     },
-    // watch: true, // 开启监听，默认为 false
-    // watchOptions: {
-    //     ignored: /node_modules/, // 忽略哪些
-    //     // 监听到变化发生后会等300ms再去执行动作，防止文件更新太快导致重新编译频率太高
-    //     // 默认为 300ms
-    //     aggregateTimeout: 300,
-    //     // 判断文件是否发生变化是通过不停的去询问系统指定文件有没有变化实现的
-    //     // 默认每隔1000毫秒询问一次
-    //     poll: 1000
-    // }
+    
 })
+
+//开发环境用
+// module.exports={
+// watch: true, // 开启监听，默认为 false
+// //开启监听之后，webpack-dev-server会自动开启刷新浏览器
+
+//    //监听配置
+//     watchOptions: {
+//         ignored: /node_modules/, // 忽略哪些
+//         // 监听到变化发生后会等300ms再去执行动作，防止文件更新太快导致重新编译频率太高
+//         // 默认为 300ms
+//         aggregateTimeout: 300,
+//         // 判断文件是否发生变化是通过不停的去询问系统指定文件有没有变化实现的
+//         // 默认每隔1000毫秒询问一次
+//         poll: 1000
+//     }
+// }
