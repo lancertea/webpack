@@ -43,9 +43,11 @@ insertImgElem(imgFile2)
 
 
 //引入动态数据 懒加载
-// setTimeout(()=>{
-//     import('./dynamic-data.js').then(res=>{
-//         console.log(res.default.message)  //注意这里的default
+setTimeout(()=>{
+    //回顾vue  React 异步组件
+    //定义chunk
+    import('./dynamic-data.js').then(res=>{
+        console.log(res.default.message)  //注意这里的default
         
-//     })
-// },1500)
+    })
+},1500)
