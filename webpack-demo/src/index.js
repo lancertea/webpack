@@ -12,7 +12,6 @@ console.log('sumRes', sumRes)
 // console.log(_.each);
 
 //IgnorePligin(避免引入无用模块)
-
 import moment from 'moment' //235.4k    58k
 import 'moment/locale/zh-cn'  //手动引入中文包
 moment.locale('zh-cn') //设置语言为中文

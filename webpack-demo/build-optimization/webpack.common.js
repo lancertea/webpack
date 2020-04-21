@@ -13,7 +13,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: ['babel-loader?cacheDirectory'], //开启缓存
-                include: srcPath,
+                include: srcPath,       //明确范围
                 exclude: /node_modules/
             }
         ]
